@@ -64,8 +64,9 @@ Step 7 - Click the "Result" button
 
 Please feel free to contact us (hyunchul_kim@korea.ac.kr), if you have any problems and suggestions.  
 
-4. References
- 
+
+References
+
 Allen, P.J., Josephs, O., Turner, R., 2000. A method for removing imaging artifact from continuous EEG recorded during functional MRI. Neuroimage 12, 230-239.
 Delorme, A., Makeig, S., 2004. EEGLAB: an open source toolbox for analysis of single-trial EEG dynamics including independent component analysis. Journal of neuroscience methods 134, 9-21.
 Liu, Z., de Zwart, J.A., van Gelderen, P., Kuo, L.W., Duyn, J.H., 2012b. Statistical feature extraction for artifact removal from concurrent fMRI-EEG recordings. Neuroimage 59, 2073-2087.
