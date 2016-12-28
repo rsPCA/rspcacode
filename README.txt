@@ -65,6 +65,8 @@ Step 7 - Click the "Result" button
    	  (3) Approximate computation time (e.g., a single-channel of EEG data recorded for 5 minutes with 110Hz sampling rate): 
              - 20 minutes (220 sample, 2s), 30 minutes (330 samples, 3s), and 40 minutes (440  samples, 4s) 
                using a Windows 7 computer (Intel(R) Core(TM) i7-3770 CPU @ 3.40GHz, 16.0 GB, MATLAB 2009b)
+          (4) If you want to use 250HZ EEG data to remove helium pump artifact, we can recommand the following parameters: 
+             - The EEG segment size = 500, Percentage threshold level = 3%. This will be worked, properly. 
 
 Please feel free to contact us (hyunchul_kim@korea.ac.kr), if you have any problems and suggestions.  
 
