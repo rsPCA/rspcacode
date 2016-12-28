@@ -65,11 +65,5 @@ Step 7 - Click the "Result" button
 Please feel free to contact us (hyunchul_kim@korea.ac.kr), if you have any problems and suggestions.  
 
 
-References
-
-Allen, P.J., Josephs, O., Turner, R., 2000. A method for removing imaging artifact from continuous EEG recorded during functional MRI. Neuroimage 12, 230-239.
-Delorme, A., Makeig, S., 2004. EEGLAB: an open source toolbox for analysis of single-trial EEG dynamics including independent component analysis. Journal of neuroscience methods 134, 9-21.
-Liu, Z., de Zwart, J.A., van Gelderen, P., Kuo, L.W., Duyn, J.H., 2012b. Statistical feature extraction for artifact removal from concurrent fMRI-EEG recordings. Neuroimage 59, 2073-2087.
-Moosmann, M., Schonfelder, V.H., Specht, K., Scheeringa, R., Nordby, H., Hugdahl, K., 2009. Realignment parameter-informed artefact correction for simultaneous EEG-fMRI recordings. Neuroimage 45, 1144-1150.
-Niazy, R.K., Beckmann, C.F., Iannetti, G.D., Brady, J.M., Smith, S.M., 2005. Removal of FMRI environment artifacts from EEG data using optimal basis sets. Neruoimage 28, 720-737.
-
+Reference
+Kim et al., Recursive approach of EEG segment based principal component analysis substantially reduces helium-pump artifacts of EEG data simultaneously acquired with fMRI, NeuroImage 2015, 104: 437-51
