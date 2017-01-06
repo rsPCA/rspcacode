@@ -3,11 +3,8 @@ Recursive approach of EEG-segment-based principal component analysis (rsPCA) too
 Department of Brain and Cognitive Engineering, Korea University
 Brain Signal Processing Laboratory, BSPL
  
-1. Introduction 
 The rsPCA toolbox is developed to remove helium-pump artifact from EEG data obtained in simultaneous EEG/fMRI acquisition. 
 We hope that this toolbox can improve the quality of EEG signal.
-
-2. Prerequisites and installation
 
 Prerequisites: Matlab (www.mathworks.com) and EEGLAB (sccn.ucsd.edu/eeglab; (Delorme and Makeig, 2004)) should be installed.
 
