@@ -15,7 +15,7 @@ We hope that this toolbox can improve the quality of EEG signal.
 
 2. Prerequisites and installation
 
-Prerequisites: Matlab (www.mathworks.com) and EEGLAB (sccn.ucsd.edu/eeglab; (Delorme and Makeig, 2004)) should be installed.
+Prerequisites: MATLAB (www.mathworks.com) and EEGLAB (sccn.ucsd.edu/eeglab; (Delorme and Makeig, 2004)) should be installed.
 
 Installation: Download the "rspca.zip" file and unzip in a desired directory. 
 We would recommend you to follow the tutorial below with the sample data (stored in ../rsPCA/sample_data). one preprocessed sample datasets is provided.
