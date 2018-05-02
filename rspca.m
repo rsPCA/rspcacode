@@ -35,6 +35,8 @@ segsize =[fs*2 fs*3 fs*4];
 stgsigpdetc = ['1%'; '2%'; '3%'];
 stgsegsize = [sprintf('%04d / 2s',fs*2); sprintf('%04d / 3s',fs*3); sprintf('%04d / 4s',fs*4)];
 %% default parameters
+
+TR = 2;  % default TR
 seg_val = round(EEG.srate*2); % EEG segment of samples
 sigp_val = 0.01;     % percentage level for the single peak detection
 output_path = EEG.filepath; % output directory
@@ -83,8 +85,14 @@ hcheck_verbose_box = uicontrol('Style','checkbox','String',[], ...
 htext_verbose_checkbox  = uicontrol('style','text','String','Verbose', ...
     'Position',[250,95,70,15]);
 
-htext_fs = uicontrol('style','text','String',sprintf('Sampling rate: %2.2fHz',fs), ...
-    'Position',[240,220,150,20]);
+htext_fs = uicontrol('style','text','String',sprintf('fs: %2.2fHz',fs), ...
+    'Position',[220,220,120,20]);
+
+htext_tr_txt = uicontrol('style','text','String','TR:', ...
+    'Position',[340,220,30,20]);
+
+htext_tr =uicontrol('style','edit','String',num2str(TR), ...
+    'Position',[370,220,60,20]);
 
 hset_output_path_box = uicontrol('Style','pushbutton','String','Output directory', ...
     'Position',[10,250,140,30],'Callback',{@popup_output_path_box_Callback}); 
@@ -98,7 +106,7 @@ htext_output_path_box = uicontrol('Style','text','String',output_path, ...
 group_box = [hpopup_segsize,hpopup_sigp_detc, htext_sigp, htext_list_box, htext_box_input...
     htext_output_path_box, hset_output_path_box, hrun,htext_seg,hlist_box ...
     , hresult, hlist_box_input,hall_box,hreset_box, hcheck_verbose_box, ...
-    htext_fs, htext_verbose_checkbox];
+    htext_fs, htext_verbose_checkbox,htext_tr_txt,htext_tr];
 
 
 set([f,group_box],'Units','normalized');
@@ -214,7 +222,7 @@ set(f,'Visible','on');
             set(group_box,'enable','off');
             disp('run rsPCA!!');
             %             h = waitbar(0,'Please wait...');
-            
+
             main_rspca(EEG,output_path,tgch,seg_val,sigp_val,flg_verbose);
             
             set(group_box,'enable','on');
@@ -223,7 +231,8 @@ set(f,'Visible','on');
     end
 
     function popup_result_Callback(source,eventdata)
-        rspca_result_gui(EEG,output_path);
+        TR=str2num(get(htext_tr,'string'));
+        rspca_result_gui(EEG,TR,output_path);
     end
 
 end

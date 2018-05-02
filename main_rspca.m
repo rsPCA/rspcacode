@@ -19,27 +19,40 @@
 %     seg_val : EEG segment size
 %     sigp_val : Percentage threshold level 0.01, 0.02, or 0.03 
 %               (for single-peak detection)
-%     flg_verboase :  1 = on, otherwise = off
-%     
-   
+%     flg_verboase :  1 = on, otherwise = off  
 
 function main_rspca(EEG,outdir,tgch,seg_val,sigp_val,flg_verbose)
 
 if ismac~=1
-
-choice = questdlg('Would you like to use the multiple-cores?');
-
-if strcmp(choice,'Yes')
-    try
-        matlabpool open
-    catch
-        matlabpool close
-        matlabpool open
+    
+    choice = questdlg('Would you like to use the multiple-cores?');
+    
+    [v d] = version;
+    [str_i] = strfind(v,'R');
+    
+    if str2num(v(str_i+1:str_i+4))<=2015
+        if strcmp(choice,'Yes')
+            try
+                matlabpool open
+            catch
+                matlabpool close
+                matlabpool open
+            end
+        elseif strcmp(choice,'Cancel')
+            return;
+        end
+    else
+        if strcmp(choice,'Yes')
+            try
+                parpool('local')
+            catch
+                delete(gcp)
+                parpool('local')
+            end
+        elseif strcmp(choice,'Cancel')
+            return;
+        end
     end
-elseif strcmp(choice,'Cancel')
-    return;
-end
-
 end
 
 fs = round(EEG.srate); fpt = 2^(floor(log2(seg_val))+2);
@@ -80,9 +93,9 @@ for i=1:nch
     disp('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%');
     disp(sprintf('%s channel is being processing...',chnnel_info));
     disp('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%');
-    
+    tic
     [rX] = do_irspca_main(sig,dsmp,depth,loc_vec_ui32,sigp_val,th_nkval,th_var,chnnel_info,chidx,fs,fpt,flg_verbose,max_depth,max_nkurt);
-    
+    cost_time = toc
     irspca.rX = rX; % save time-course 
     irspca.seg = dsmp; % save EEG segment size
     irspca.disgp_dbB = sigp_dB; % save single-peak detection level

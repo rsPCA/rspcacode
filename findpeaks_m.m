@@ -37,7 +37,8 @@ function [pks,locs] = findpeaks_m(X,varargin)
 %   Copyright 2007-2009 The MathWorks, Inc.
 %   $Revision: 1.1.6.8 $  $Date: 2009/05/23 08:13:26 $
 
-error(nargchk(1,11,nargin,'struct'));
+% error(nargchk(1,11,nargin,'struct'));
+error(nargoutchk(1,11,nargin,'struct'));
 
 validateattributes(X,{'numeric'},{'nonempty','real','vector'},...
     'findpeaks','X');

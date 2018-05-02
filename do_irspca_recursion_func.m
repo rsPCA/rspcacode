@@ -122,7 +122,9 @@ else
             if flg_verbose==1
                 disp(sprintf('%s ch (%d/31): depth %02d: %02d eigenvector proceeds another recursion of the rsPCA ...',chnnel_info,chnnel_idx,depth,iter_idx(i)));
             end
-            [out_rXbar] = do_irspca_recursion_func(nsig,dim,depth,tgidx,loc_vec_ui32,singpdB,thkval,stop_var,chnnel_info,chnnel_idx,fs,fpt,tgVar,flg_verbose);
+%             [out_rXbar] = do_irspca_recursion_func(nsig,dim,depth,loc_vec_ui32,singpdB,thkval,stop_var,chnnel_info,chnnel_idx,fs,fpt,tgVar,flg_verbose);
+            [out_rXbar] = do_irspca_recursion_func(nsig,dim,depth,loc_vec_ui32,singpdB,thkval,stop_var,chnnel_info,chnnel_idx,fs,fpt,tgVar,flg_verbose,max_depth,max_nkurt);
+
             reconXbar(iter_idx(i),:)= out_rXbar;
         else
             continue;
