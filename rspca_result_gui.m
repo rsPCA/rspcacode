@@ -89,7 +89,8 @@ set([result_f,result_group_box],'Units','normalized');
         tdim = size(EEG.data,2);
         
         %% Plot power spectra estimation
-        [raw_B,raw_F,raw_T,raw_P]= spectrogram(double(zscore(EEG.data(tgch,:))),win_len,overlap_len,fpt,nfs);
+%         [raw_B,raw_F,raw_T,raw_P]= spectrogram(double(zscore(EEG.data(tgch,:))),win_len,overlap_len,fpt,nfs);
+        [raw_B,raw_F,raw_T,raw_P]= spectrogram(double((EEG.data(tgch,:))),win_len,overlap_len,fpt,nfs);
         raw_mpw=mean(abs(raw_B).^2,2);
         [B,F,T,P]= spectrogram(double(rX),nfs*2,nfs,fpt,nfs);
         mpw=mean(abs(B).^2,2);
