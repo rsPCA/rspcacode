@@ -60,7 +60,7 @@ Step 7 - Click the "Result" button
 	      - The EEG segment size = 500, Percentage threshold level = 3%. This will be worked, properly. 
 
 Update at Aug. 11, 2018
- - After Helium-pump artifact is removed, the scale of each z-scored EEG signal shifts back to the input data distribution, before it was z-score transformed.
+ - After Helium-pump artifact is removed, the scale of each z-scored EEG signal shifts back to the input data distribution, before it is z-score transformed.
 
 Please feel free to contact us (hyunchul_kim@korea.ac.kr), if you have any problems and suggestions.  
 
